@@ -64,3 +64,24 @@ require __DIR__.'/routes_estados.php';
 
 //Dashboards
 require __DIR__.'/routes_dashboards.php';
+
+//Tipos Escolas
+require __DIR__.'/routes_tipos_escolas.php';
+
+//Niveis Ensino
+require __DIR__.'/routes_niveis_ensinos.php';
+
+//Escolas
+require __DIR__.'/routes_escolas.php';
+
+//Professores
+require __DIR__.'/routes_professores.php';
+
+//Alunos
+require __DIR__.'/routes_alunos.php';
+
+//Turmas
+require __DIR__.'/routes_turmas.php';
+
+//Deficiencias
+require __DIR__.'/routes_deficiencias.php';

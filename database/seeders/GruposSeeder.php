@@ -11,5 +11,9 @@ class GruposSeeder extends Seeder
     {
         //criando Grupo
         Grupo::create(['name' => 'Administrador']);
+        Grupo::create(['name' => 'Gerente']);
+        Grupo::create(['name' => 'Operador']);
+        Grupo::create(['name' => 'Consultar']);
+        Grupo::create(['name' => 'Super Administrador']);
     }
 }

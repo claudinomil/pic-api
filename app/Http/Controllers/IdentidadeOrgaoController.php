@@ -94,7 +94,7 @@ class IdentidadeOrgaoController extends Controller
                 //Verificar Relacionamentos'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
                 //Tabela funcionarios
-                $qtd = DB::table('funcionarios')->where('personal_identidade_orgao_id', $id)->count();
+                $qtd = DB::table('funcionarios')->where('pessoal_identidade_orgao_id', $id)->count();
 
                 if ($qtd > 0) {
                     return response()->json(ApiReturn::data('Náo é possível excluir. Registro relacionado em outras tabelas.', 2040, null, null), 200);

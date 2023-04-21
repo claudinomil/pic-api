@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -27,5 +28,22 @@ class UsersSeeder extends Seeder
             'situacao_id' => '1',
             'created_at' => now()
         ]);
+
+        $faker = \Faker\Factory::create('pt_BR');
+
+        for($i=1; $i<=20; $i++) {
+            User::create([
+                'name' => $faker->name,
+                'email' => $faker->email,
+                'password' => Hash::make('claudino1971'),
+                'email_verified_at' => '2022-06-02 12:00:00',
+                'avatar' => 'build/assets/images/users/avatar-0.png',
+                'layout_mode' => 'layout_mode_light',
+                'layout_style' => 'layout_style_vertical_scrollable',
+                'grupo_id' => $faker->numberBetween(1, 5),
+                'situacao_id' => $faker->numberBetween(1, 2),
+                'created_at' => now()
+            ]);
+        }
     }
 }

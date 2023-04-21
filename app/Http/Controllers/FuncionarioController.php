@@ -32,8 +32,8 @@ class FuncionarioController extends Controller
     public function index()
     {
         $registros = DB::table('funcionarios')
-            ->leftJoin('identidade_orgaos', 'funcionarios.personal_identidade_orgao_id', '=', 'identidade_orgaos.id')
-            ->leftJoin('estados', 'funcionarios.personal_identidade_estado_id', '=', 'estados.id')
+            ->leftJoin('identidade_orgaos', 'funcionarios.pessoal_identidade_orgao_id', '=', 'identidade_orgaos.id')
+            ->leftJoin('estados', 'funcionarios.pessoal_identidade_estado_id', '=', 'estados.id')
             ->leftJoin('generos', 'funcionarios.genero_id', '=', 'generos.id')
             ->leftJoin('estados_civis', 'funcionarios.estado_civil_id', '=', 'estados_civis.id')
             ->select(['funcionarios.*', 'identidade_orgaos.name as identidade_orgaosName', 'estados.name as identidadeEstadoName', 'generos.name as generoName', 'estados_civis.name as estado_civilName'])
@@ -109,8 +109,8 @@ class FuncionarioController extends Controller
             if ($request['data_nascimento'] != '') {$data['data_nascimento'] = Carbon::createFromFormat('d/m/Y', $request['data_nascimento'])->format('Y-m-d');}
             if ($request['data_admissao'] != '') {$data['data_admissao'] = Carbon::createFromFormat('d/m/Y', $request['data_admissao'])->format('Y-m-d');}
             if ($request['data_demissao'] != '') {$data['data_demissao'] = Carbon::createFromFormat('d/m/Y', $request['data_demissao'])->format('Y-m-d');}
-            if ($request['personal_identidade_data_emissao'] != '') {$data['personal_identidade_data_emissao'] = Carbon::createFromFormat('d/m/Y', $request['personal_identidade_data_emissao'])->format('Y-m-d');}
-            if ($request['professional_identidade_data_emissao'] != '') {$data['professional_identidade_data_emissao'] = Carbon::createFromFormat('d/m/Y', $request['professional_identidade_data_emissao'])->format('Y-m-d');}
+            if ($request['pessoal_identidade_data_emissao'] != '') {$data['pessoal_identidade_data_emissao'] = Carbon::createFromFormat('d/m/Y', $request['pessoal_identidade_data_emissao'])->format('Y-m-d');}
+            if ($request['profissional_identidade_data_emissao'] != '') {$data['profissional_identidade_data_emissao'] = Carbon::createFromFormat('d/m/Y', $request['profissional_identidade_data_emissao'])->format('Y-m-d');}
 
             //Campo foto
             $data['foto'] = 'build/assets/images/funcionarios/funcionario-0.png';
@@ -142,8 +142,8 @@ class FuncionarioController extends Controller
                 if ($request['data_nascimento'] != '') {$data['data_nascimento'] = Carbon::createFromFormat('d/m/Y', $request['data_nascimento'])->format('Y-m-d');}
                 if ($request['data_admissao'] != '') {$data['data_admissao'] = Carbon::createFromFormat('d/m/Y', $request['data_admissao'])->format('Y-m-d');}
                 if ($request['data_demissao'] != '') {$data['data_demissao'] = Carbon::createFromFormat('d/m/Y', $request['data_demissao'])->format('Y-m-d');}
-                if ($request['personal_identidade_data_emissao'] != '') {$data['personal_identidade_data_emissao'] = Carbon::createFromFormat('d/m/Y', $request['personal_identidade_data_emissao'])->format('Y-m-d');}
-                if ($request['professional_identidade_data_emissao'] != '') {$data['professional_identidade_data_emissao'] = Carbon::createFromFormat('d/m/Y', $request['professional_identidade_data_emissao'])->format('Y-m-d');}
+                if ($request['pessoal_identidade_data_emissao'] != '') {$data['pessoal_identidade_data_emissao'] = Carbon::createFromFormat('d/m/Y', $request['pessoal_identidade_data_emissao'])->format('Y-m-d');}
+                if ($request['profissional_identidade_data_emissao'] != '') {$data['profissional_identidade_data_emissao'] = Carbon::createFromFormat('d/m/Y', $request['profissional_identidade_data_emissao'])->format('Y-m-d');}
 
                 //Alterando registro
                 $registro->update($data);
@@ -166,8 +166,8 @@ class FuncionarioController extends Controller
 
             //Funcionario
             $funcionario = DB::table('funcionarios')
-                ->leftJoin('identidade_orgaos', 'funcionarios.personal_identidade_orgao_id', '=', 'identidade_orgaos.id')
-                ->leftJoin('estados', 'funcionarios.personal_identidade_estado_id', '=', 'estados.id')
+                ->leftJoin('identidade_orgaos', 'funcionarios.pessoal_identidade_orgao_id', '=', 'identidade_orgaos.id')
+                ->leftJoin('estados', 'funcionarios.pessoal_identidade_estado_id', '=', 'estados.id')
                 ->leftJoin('generos', 'funcionarios.genero_id', '=', 'generos.id')
                 ->leftJoin('funcoes', 'funcionarios.funcao_id', '=', 'funcoes.id')
                 ->leftJoin('escolaridades', 'funcionarios.escolaridade_id', '=', 'escolaridades.id')
@@ -244,8 +244,8 @@ class FuncionarioController extends Controller
     public function search($field, $value)
     {
         $registros = DB::table('funcionarios')
-            ->leftJoin('identidade_orgaos', 'funcionarios.personal_identidade_orgao_id', '=', 'identidade_orgaos.id')
-            ->leftJoin('estados', 'funcionarios.personal_identidade_estado_id', '=', 'estados.id')
+            ->leftJoin('identidade_orgaos', 'funcionarios.pessoal_identidade_orgao_id', '=', 'identidade_orgaos.id')
+            ->leftJoin('estados', 'funcionarios.pessoal_identidade_estado_id', '=', 'estados.id')
             ->leftJoin('generos', 'funcionarios.genero_id', '=', 'generos.id')
             ->leftJoin('estados_civis', 'funcionarios.estado_civil_id', '=', 'estados_civis.id')
             ->select(['funcionarios.*', 'identidade_orgaos.name as identidade_orgaosName', 'estados.name as identidadeEstadoName', 'generos.name as generoName', 'estados_civis.name as estado_civilName'])
@@ -258,8 +258,8 @@ class FuncionarioController extends Controller
     public function research($fieldSearch, $fieldValue, $fieldReturn)
     {
         $registros = DB::table('funcionarios')
-            ->leftJoin('identidade_orgaos', 'funcionarios.personal_identidade_orgao_id', '=', 'identidade_orgaos.id')
-            ->leftJoin('estados', 'funcionarios.personal_identidade_estado_id', '=', 'estados.id')
+            ->leftJoin('identidade_orgaos', 'funcionarios.pessoal_identidade_orgao_id', '=', 'identidade_orgaos.id')
+            ->leftJoin('estados', 'funcionarios.pessoal_identidade_estado_id', '=', 'estados.id')
             ->leftJoin('generos', 'funcionarios.genero_id', '=', 'generos.id')
             ->leftJoin('estados_civis', 'funcionarios.estado_civil_id', '=', 'estados_civis.id')
             ->select(['funcionarios.*', 'identidade_orgaos.name as identidade_orgaosName', 'estados.name as identidadeEstadoName', 'generos.name as generoName', 'estados_civis.name as estado_civilName'])

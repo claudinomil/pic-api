@@ -129,5 +129,47 @@ class GrupoPermissoesSeeder extends Seeder
 
         GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 96]);
         GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 97]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 98]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 99]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 100]);
+
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 101]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 102]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 103]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 104]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 105]);
+
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 106]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 107]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 108]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 109]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 110]);
+
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 111]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 112]);
+
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 113]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 114]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 115]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 116]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 117]);
+
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 118]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 119]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 120]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 121]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 122]);
+
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 123]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 124]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 125]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 126]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 127]);
+
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 128]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 129]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 130]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 131]);
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 132]);
     }
 }

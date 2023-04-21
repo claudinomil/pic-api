@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Deficiencia;
 use App\Models\Departamento;
 use App\Models\Funcionario;
 use App\Models\Genero;
@@ -18,7 +19,15 @@ use App\Models\Escolaridade;
 use App\Models\Situacao;
 use App\Models\Submodulo;
 use App\Models\Ferramenta;
+use App\Models\Turma;
 use App\Models\User;
+use App\Models\TipoEscola;
+use App\Models\NivelEnsino;
+use App\Models\Escola;
+use App\Models\Professor;
+use App\Models\Aluno;
+
+use App\Observers\DeficienciaObserver;
 use App\Observers\DepartamentoObserver;
 use App\Observers\FuncionarioObserver;
 use App\Observers\GeneroObserver;
@@ -35,7 +44,13 @@ use App\Observers\EscolaridadeObserver;
 use App\Observers\SituacaoObserver;
 use App\Observers\SubmoduloObserver;
 use App\Observers\FerramentaObserver;
+use App\Observers\TurmaObserver;
 use App\Observers\UserObserver;
+use App\Observers\TipoEscolaObserver;
+use App\Observers\NivelEnsinoObserver;
+use App\Observers\EscolaObserver;
+use App\Observers\ProfessorObserver;
+use App\Observers\AlunoObserver;
 
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -68,6 +83,13 @@ class EventServiceProvider extends ServiceProvider
         Submodulo::observe(SubmoduloObserver::class);
         Ferramenta::observe(FerramentaObserver::class);
         User::observe(UserObserver::class);
+        TipoEscola::observe(TipoEscolaObserver::class);
+        NivelEnsino::observe(NivelEnsinoObserver::class);
+        Escola::observe(EscolaObserver::class);
+        Professor::observe(ProfessorObserver::class);
+        Aluno::observe(AlunoObserver::class);
+        Turma::observe(TurmaObserver::class);
+        Deficiencia::observe(DeficienciaObserver::class);
     }
 
     public function shouldDiscoverEvents()

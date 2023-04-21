@@ -67,6 +67,12 @@ class PermissoesSeeder extends Seeder
         Permissao::create(['submodulo_id' => 9, 'name' => 'ferramentas_edit', 'description' => 'Editar Registro - Ferramentas']);
         Permissao::create(['submodulo_id' => 9, 'name' => 'ferramentas_destroy', 'description' => 'Deletar Registro - Ferramentas']);
 
+        Permissao::create(['submodulo_id' => 10, 'name' => 'escolas_list', 'description' => 'Visualizar Registro - Escolas']);
+        Permissao::create(['submodulo_id' => 10, 'name' => 'escolas_create', 'description' => 'Criar Registro - Escolas']);
+        Permissao::create(['submodulo_id' => 10, 'name' => 'escolas_show', 'description' => 'Visualizar Registro - Escolas']);
+        Permissao::create(['submodulo_id' => 10, 'name' => 'escolas_edit', 'description' => 'Editar Registro - Escolas']);
+        Permissao::create(['submodulo_id' => 10, 'name' => 'escolas_destroy', 'description' => 'Deletar Registro - Escolas']);
+
         Permissao::create(['submodulo_id' => 11, 'name' => 'departamentos_list', 'description' => 'Visualizar Registro - Departamentos']);
         Permissao::create(['submodulo_id' => 11, 'name' => 'departamentos_create', 'description' => 'Criar Registro - Departamentos']);
         Permissao::create(['submodulo_id' => 11, 'name' => 'departamentos_show', 'description' => 'Visualizar Registro - Departamentos']);
@@ -121,13 +127,49 @@ class PermissoesSeeder extends Seeder
         Permissao::create(['submodulo_id' => 19, 'name' => 'identidade_orgaos_edit', 'description' => 'Editar Registro - Órgãos Identidades']);
         Permissao::create(['submodulo_id' => 19, 'name' => 'identidade_orgaos_destroy', 'description' => 'Deletar Registro - Órgãos Identidades']);
 
+        Permissao::create(['submodulo_id' => 20, 'name' => 'professores_list', 'description' => 'Visualizar Registro - Professores']);
+        Permissao::create(['submodulo_id' => 20, 'name' => 'professores_create', 'description' => 'Criar Registro - Professores']);
+        Permissao::create(['submodulo_id' => 20, 'name' => 'professores_show', 'description' => 'Visualizar Registro - Professores']);
+        Permissao::create(['submodulo_id' => 20, 'name' => 'professores_edit', 'description' => 'Editar Registro - Professores']);
+        Permissao::create(['submodulo_id' => 20, 'name' => 'professores_destroy', 'description' => 'Deletar Registro - Professores']);
+
         Permissao::create(['submodulo_id' => 21, 'name' => 'dashboards_list', 'description' => 'Visualizar Registro - Dashboards']);
         Permissao::create(['submodulo_id' => 21, 'name' => 'dashboards_create', 'description' => 'Criar Registro - Dashboards']);
         Permissao::create(['submodulo_id' => 21, 'name' => 'dashboards_show', 'description' => 'Visualizar Registro - Dashboards']);
         Permissao::create(['submodulo_id' => 21, 'name' => 'dashboards_edit', 'description' => 'Editar Registro - Dashboards']);
         Permissao::create(['submodulo_id' => 21, 'name' => 'dashboards_destroy', 'description' => 'Deletar Registro - Dashboards']);
 
+        Permissao::create(['submodulo_id' => 22, 'name' => 'alunos_list', 'description' => 'Visualizar Registro - Alunos']);
+        Permissao::create(['submodulo_id' => 22, 'name' => 'alunos_create', 'description' => 'Criar Registro - Alunos']);
+        Permissao::create(['submodulo_id' => 22, 'name' => 'alunos_show', 'description' => 'Visualizar Registro - Alunos']);
+        Permissao::create(['submodulo_id' => 22, 'name' => 'alunos_edit', 'description' => 'Editar Registro - Alunos']);
+        Permissao::create(['submodulo_id' => 22, 'name' => 'alunos_destroy', 'description' => 'Deletar Registro - Alunos']);
+
         Permissao::create(['submodulo_id' => 24, 'name' => 'users_perfil_show', 'description' => 'Visualizar Registro - Usuários Perfil']);
         Permissao::create(['submodulo_id' => 24, 'name' => 'users_perfil_edit', 'description' => 'Editar Registro - Usuários Perfil']);
+
+        Permissao::create(['submodulo_id' => 25, 'name' => 'tipos_escolas_list', 'description' => 'Visualizar Registro - Tipos Escolas']);
+        Permissao::create(['submodulo_id' => 25, 'name' => 'tipos_escolas_create', 'description' => 'Criar Registro - Tipos Escolas']);
+        Permissao::create(['submodulo_id' => 25, 'name' => 'tipos_escolas_show', 'description' => 'Visualizar Registro - Tipos Escolas']);
+        Permissao::create(['submodulo_id' => 25, 'name' => 'tipos_escolas_edit', 'description' => 'Editar Registro - Tipos Escolas']);
+        Permissao::create(['submodulo_id' => 25, 'name' => 'tipos_escolas_destroy', 'description' => 'Deletar Registro - Tipos Escolas']);
+
+        Permissao::create(['submodulo_id' => 26, 'name' => 'niveis_ensinos_list', 'description' => 'Visualizar Registro - Níveis Ensinos']);
+        Permissao::create(['submodulo_id' => 26, 'name' => 'niveis_ensinos_create', 'description' => 'Criar Registro - Níveis Ensinos']);
+        Permissao::create(['submodulo_id' => 26, 'name' => 'niveis_ensinos_show', 'description' => 'Visualizar Registro - Níveis Ensinos']);
+        Permissao::create(['submodulo_id' => 26, 'name' => 'niveis_ensinos_edit', 'description' => 'Editar Registro - Níveis Ensinos']);
+        Permissao::create(['submodulo_id' => 26, 'name' => 'niveis_ensinos_destroy', 'description' => 'Deletar Registro - Níveis Ensinos']);
+
+        Permissao::create(['submodulo_id' => 27, 'name' => 'turmas_list', 'description' => 'Visualizar Registro - Turmas']);
+        Permissao::create(['submodulo_id' => 27, 'name' => 'turmas_create', 'description' => 'Criar Registro - Turmas']);
+        Permissao::create(['submodulo_id' => 27, 'name' => 'turmas_show', 'description' => 'Visualizar Registro - Turmas']);
+        Permissao::create(['submodulo_id' => 27, 'name' => 'turmas_edit', 'description' => 'Editar Registro - Turmas']);
+        Permissao::create(['submodulo_id' => 27, 'name' => 'turmas_destroy', 'description' => 'Deletar Registro - Turmas']);
+
+        Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_list', 'description' => 'Visualizar Registro - Deficiências']);
+        Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_create', 'description' => 'Criar Registro - Deficiências']);
+        Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_show', 'description' => 'Visualizar Registro - Deficiências']);
+        Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_edit', 'description' => 'Editar Registro - Deficiências']);
+        Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_destroy', 'description' => 'Deletar Registro - Deficiências']);
     }
 }

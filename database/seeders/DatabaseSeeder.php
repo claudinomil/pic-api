@@ -26,6 +26,15 @@ class DatabaseSeeder extends Seeder
             OperacoesSeeder::class,
             EstadosSeeder::class,
             UsersSeeder::class,
+            TiposEscolasSeeder::class,
+            NiveisEnsinosSeeder::class,
+            RacasSeeder::class,
+            EscolasSeeder::class,
+            ProfessoresSeeder::class,
+            TurmasSeeder::class,
+            AlunosSeeder::class,
+            TransacoesSeeder::class,
+            DeficienciasSeeder::class
         ]);
     }
 }
