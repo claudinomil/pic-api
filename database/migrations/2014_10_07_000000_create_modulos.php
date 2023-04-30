@@ -10,11 +10,12 @@ return new class extends Migration
     {
         Schema::create('modulos', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
-            $table->string('menu_text')->unique();
+            $table->string('name');
+            $table->string('menu_text');
             $table->string('menu_url')->unique();
             $table->string('menu_route')->unique();
             $table->string('menu_icon')->unique();
+            $table->integer('mobile')->default(0);
             $table->integer('viewing_order');
             $table->timestamps();
             $table->softDeletes();

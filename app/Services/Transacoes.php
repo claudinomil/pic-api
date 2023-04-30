@@ -14,6 +14,7 @@ use App\Models\Naturalidade;
 use App\Models\Funcao;
 use App\Models\Escolaridade;
 use App\Models\NivelEnsino;
+use App\Models\SistemaAcesso;
 use App\Models\Situacao;
 use App\Models\Estado;
 use App\Models\TipoEscola;
@@ -275,6 +276,18 @@ class Transacoes
                 if (($laterData['funcionario_id'] != "") and ($laterData['funcionario_id'] != 0)) {
                     $search = Funcionario::where('id', $laterData['funcionario_id'])->get(['name']);
                     $dados .= $x . "Funcionário: " . $y . $search[0]['name'] . "<br>";
+                }
+
+                if ($beforeData['sistema_acesso_id'] != $laterData['sistema_acesso_id']) {
+                    $x = "<font class='text-danger'>";
+                    $y = "</font>";
+                } else {
+                    $x = "";
+                    $y = "";
+                }
+                if (($laterData['sistema_acesso_id'] != "") and ($laterData['sistema_acesso_id'] != 0)) {
+                    $search = SistemaAcesso::where('id', $laterData['sistema_acesso_id'])->get(['name']);
+                    $dados .= $x . "Sistema Acesso: " . $y . $search[0]['name'] . "<br>";
                 }
             }
 

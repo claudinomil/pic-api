@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             GrupoPermissoesSeeder::class,
             SituacoesSeeder::class,
             OperacoesSeeder::class,
+            SistemaAcessosSeeder::class,
             EstadosSeeder::class,
             UsersSeeder::class,
             TiposEscolasSeeder::class,

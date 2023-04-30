@@ -11,13 +11,14 @@ return new class extends Migration
         Schema::create('submodulos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('modulo_id')->constrained('modulos');
-            $table->string('name')->unique();
-            $table->string('menu_text')->unique();
+            $table->string('name');
+            $table->string('menu_text');
             $table->string('menu_url')->unique();
             $table->string('menu_route')->unique();
             $table->string('menu_icon');
             $table->string('prefix_permissao')->unique();
             $table->string('prefix_route')->unique();
+            $table->integer('mobile')->default(0);
             $table->integer('viewing_order');
             $table->timestamps();
             $table->softDeletes();

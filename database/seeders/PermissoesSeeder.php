@@ -171,5 +171,24 @@ class PermissoesSeeder extends Seeder
         Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_show', 'description' => 'Visualizar Registro - Deficiências']);
         Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_edit', 'description' => 'Editar Registro - Deficiências']);
         Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_destroy', 'description' => 'Deletar Registro - Deficiências']);
+
+        //Mobile
+        Permissao::create(['id' => 1000, 'submodulo_id' => 200, 'name' => 'mobile_list', 'description' => 'Visualizar Registro - Mobile']);
+        Permissao::create(['id' => 1001, 'submodulo_id' => 200, 'name' => 'mobile_create', 'description' => 'Criar Registro - Mobile']);
+        Permissao::create(['id' => 1002, 'submodulo_id' => 200, 'name' => 'mobile_show', 'description' => 'Visualizar Registro - Mobile']);
+        Permissao::create(['id' => 1003, 'submodulo_id' => 200, 'name' => 'mobile_edit', 'description' => 'Editar Registro - Mobile']);
+        Permissao::create(['id' => 1004, 'submodulo_id' => 200, 'name' => 'mobile_destroy', 'description' => 'Deletar Registro - Mobile']);
+
+        Permissao::create(['id' => 1005, 'submodulo_id' => 201, 'name' => 'mobile_escolas_list', 'description' => 'Visualizar Registro - Mobile Escolas']);
+        Permissao::create(['id' => 1006, 'submodulo_id' => 201, 'name' => 'mobile_escolas_create', 'description' => 'Criar Registro - Mobile Escolas']);
+        Permissao::create(['id' => 1007, 'submodulo_id' => 201, 'name' => 'mobile_escolas_show', 'description' => 'Visualizar Registro - Mobile Escolas']);
+        Permissao::create(['id' => 1008, 'submodulo_id' => 201, 'name' => 'mobile_escolas_edit', 'description' => 'Editar Registro - Mobile Escolas']);
+        Permissao::create(['id' => 1009, 'submodulo_id' => 201, 'name' => 'mobile_escolas_destroy', 'description' => 'Deletar Registro - Mobile Escolas']);
+
+        Permissao::create(['id' => 1010, 'submodulo_id' => 202, 'name' => 'mobile_deficiencias_list', 'description' => 'Visualizar Registro - Mobile Deficiências']);
+        Permissao::create(['id' => 1011, 'submodulo_id' => 202, 'name' => 'mobile_deficiencias_create', 'description' => 'Criar Registro - Mobile Deficiências']);
+        Permissao::create(['id' => 1012, 'submodulo_id' => 202, 'name' => 'mobile_deficiencias_show', 'description' => 'Visualizar Registro - Mobile Deficiências']);
+        Permissao::create(['id' => 1013, 'submodulo_id' => 202, 'name' => 'mobile_deficiencias_edit', 'description' => 'Editar Registro - Mobile Deficiências']);
+        Permissao::create(['id' => 1014, 'submodulo_id' => 202, 'name' => 'mobile_deficiencias_destroy', 'description' => 'Deletar Registro - Mobile Deficiências']);
     }
 }
