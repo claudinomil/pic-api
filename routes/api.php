@@ -83,5 +83,11 @@ require __DIR__.'/routes_alunos.php';
 //Turmas
 require __DIR__.'/routes_turmas.php';
 
-//Deficiencias
-require __DIR__.'/routes_deficiencias.php';
+//Nees
+require __DIR__.'/routes_nees.php';
+
+//Avaliacoes
+require __DIR__.'/routes_avaliacoes.php';
+
+//Publico Escolas
+require __DIR__.'/routes_publico_escolas.php';

@@ -17,9 +17,10 @@ class CreateAlunosTable extends Migration
             $table->id();
             $table->string('name');
             $table->date('data_nascimento');
-            $table->foreignId('genero_id')->constrained('generos');
             $table->foreignId('turma_id')->constrained('turmas');
-            $table->foreignId('raca_id')->constrained('racas');
+            $table->date('data_matricula');
+            $table->foreignId('genero_id')->nullable()->constrained('generos');
+            $table->foreignId('raca_id')->nullable()->constrained('racas');
             $table->foreignId('nacionalidade_id')->nullable()->constrained('nacionalidades');
             $table->foreignId('naturalidade_id')->nullable()->constrained('naturalidades');
             $table->string('pai')->nullable();
@@ -36,9 +37,9 @@ class CreateAlunosTable extends Migration
             $table->string('acompanhamento_saude_descricao')->nullable();
             $table->string('medicamento_controlado')->nullable();
             $table->string('medicamento_controlado_descricao')->nullable();
-            $table->string('laudo_deficiencia_ou_transtorno')->nullable();
-            $table->string('laudo_deficiencia_ou_transtorno_descricao')->nullable();
-            $table->string('cpf', 11)->unique();
+            $table->string('laudo_nee_ou_transtorno')->nullable();
+            $table->string('laudo_nee_ou_transtorno_descricao')->nullable();
+            $table->string('cpf', 11)->nullable()->unique();
             $table->string('cep')->nullable();
             $table->string('numero')->nullable();
             $table->string('complemento')->nullable();

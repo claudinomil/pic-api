@@ -14,11 +14,13 @@ use App\Models\Naturalidade;
 use App\Models\Funcao;
 use App\Models\Escolaridade;
 use App\Models\NivelEnsino;
+use App\Models\Raca;
 use App\Models\SistemaAcesso;
 use App\Models\Situacao;
 use App\Models\Estado;
 use App\Models\TipoEscola;
 use App\Models\Transacao;
+use App\Models\Turma;
 use App\Models\User;
 
 use Illuminate\Support\Facades\Auth;
@@ -1356,28 +1358,37 @@ class Transacoes
                     $dados .= $x . "Gênero: " . $y . $search[0]['name'] . "<br>";
                 }
 
-                if ($beforeData['estado_civil_id'] != $laterData['estado_civil_id']) {
+                if ($beforeData['turma_id'] != $laterData['turma_id']) {
                     $x = "<font class='text-danger'>";
                     $y = "</font>";
                 } else {
                     $x = "";
                     $y = "";
                 }
-                if (($laterData['estado_civil_id'] != "") and ($laterData['estado_civil_id'] != 0)) {
-                    $search = EstadoCivil::where('id', $laterData['estado_civil_id'])->get(['name']);
-                    $dados .= $x . "Estado Civil: " . $y . $search[0]['name'] . "<br>";
+                if (($laterData['turma_id'] != "") and ($laterData['turma_id'] != 0)) {
+                    $search = Turma::where('id', $laterData['turma_id'])->get(['name']);
+                    $dados .= $x . "Turma: " . $y . $search[0]['name'] . "<br>";
                 }
 
-                if ($beforeData['escolaridade_id'] != $laterData['escolaridade_id']) {
+                if ($beforeData['data_matricula'] != $laterData['data_matricula']) {
                     $x = "<font class='text-danger'>";
                     $y = "</font>";
                 } else {
                     $x = "";
                     $y = "";
                 }
-                if (($laterData['escolaridade_id'] != "") and ($laterData['escolaridade_id'] != 0)) {
-                    $search = Escolaridade::where('id', $laterData['escolaridade_id'])->get(['name']);
-                    $dados .= $x . "Escolaridade: " . $y . $search[0]['name'] . "<br>";
+                $dados .= $x . "Data Matrícula: " . $y . $laterData['data_matricula'] . "<br>";
+
+                if ($beforeData['raca_id'] != $laterData['raca_id']) {
+                    $x = "<font class='text-danger'>";
+                    $y = "</font>";
+                } else {
+                    $x = "";
+                    $y = "";
+                }
+                if (($laterData['raca_id'] != "") and ($laterData['raca_id'] != 0)) {
+                    $search = Raca::where('id', $laterData['raca_id'])->get(['name']);
+                    $dados .= $x . "Raça: " . $y . $search[0]['name'] . "<br>";
                 }
 
                 if ($beforeData['nacionalidade_id'] != $laterData['nacionalidade_id']) {
@@ -1422,164 +1433,23 @@ class Transacoes
                 }
                 $dados .= $x . "Mãe: " . $y . $laterData['mae'] . "<br>";
 
-                if ($beforeData['email'] != $laterData['email']) {
+                if ($beforeData['telefone_pai'] != $laterData['telefone_pai']) {
                     $x = "<font class='text-danger'>";
                     $y = "</font>";
                 } else {
                     $x = "";
                     $y = "";
                 }
-                $dados .= $x . "E-mail: " . $y . $laterData['email'] . "<br>";
+                $dados .= $x . "Telefone Pai: " . $y . $laterData['telefone_pai'] . "<br>";
 
-                if ($beforeData['telefone_1'] != $laterData['telefone_1']) {
+                if ($beforeData['telefone_mae'] != $laterData['telefone_mae']) {
                     $x = "<font class='text-danger'>";
                     $y = "</font>";
                 } else {
                     $x = "";
                     $y = "";
                 }
-                $dados .= $x . "Telefone 1: " . $y . $laterData['telefone_1'] . "<br>";
-
-                if ($beforeData['telefone_2'] != $laterData['telefone_2']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                $dados .= $x . "Telefone 2: " . $y . $laterData['telefone_2'] . "<br>";
-
-                if ($beforeData['celular_1'] != $laterData['celular_1']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                $dados .= $x . "Celular 1: " . $y . $laterData['celular_1'] . "<br>";
-
-                if ($beforeData['celular_2'] != $laterData['celular_2']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                $dados .= $x . "Celular 2: " . $y . $laterData['celular_2'] . "<br>";
-
-                if ($beforeData['funcao_id'] != $laterData['funcao_id']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                if (($laterData['funcao_id'] != "") and ($laterData['funcao_id'] != 0)) {
-                    $search = Funcao::where('id', $laterData['funcao_id'])->get(['name']);
-                    $dados .= $x . "Função: " . $y . $search[0]['name'] . "<br>";
-                }
-
-                if ($beforeData['data_admissao'] != $laterData['data_admissao']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                $dados .= $x . "Data Admissão: " . $y . $laterData['data_admissao'] . "<br>";
-
-                if ($beforeData['data_demissao'] != $laterData['data_demissao']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                $dados .= $x . "Data Demissão: " . $y . $laterData['data_demissao'] . "<br>";
-
-                if ($beforeData['pessoal_identidade_orgao_id'] != $laterData['pessoal_identidade_orgao_id']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                if (($laterData['pessoal_identidade_orgao_id'] != "") and ($laterData['pessoal_identidade_orgao_id'] != 0)) {
-                    $search = IdentidadeOrgao::where('id', $laterData['pessoal_identidade_orgao_id'])->get(['name']);
-                    $dados .= $x . "Identidade Pessoal (Órgão): " . $y . $search[0]['name'] . "<br>";
-                }
-
-                if ($beforeData['pessoal_identidade_estado_id'] != $laterData['pessoal_identidade_estado_id']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                if (($laterData['pessoal_identidade_estado_id'] != "") and ($laterData['pessoal_identidade_estado_id'] != 0)) {
-                    $search = Estado::where('id', $laterData['pessoal_identidade_estado_id'])->get(['name']);
-                    $dados .= $x . "Identidade Pessoal (Estado): " . $y . $search[0]['name'] . "<br>";
-                }
-
-                if ($beforeData['pessoal_identidade_numero'] != $laterData['pessoal_identidade_numero']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                $dados .= $x . "Identidade Pessoal (Número): " . $y . $laterData['pessoal_identidade_numero'] . "<br>";
-
-                if ($beforeData['pessoal_identidade_data_emissao'] != $laterData['pessoal_identidade_data_emissao']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                $dados .= $x . "Identidade Pessoal (Emissão): " . $y . $laterData['pessoal_identidade_data_emissao'] . "<br>";
-
-                if ($beforeData['profissional_identidade_orgao_id'] != $laterData['profissional_identidade_orgao_id']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                if (($laterData['profissional_identidade_orgao_id'] != "") and ($laterData['profissional_identidade_orgao_id'] != 0)) {
-                    $search = IdentidadeOrgao::where('id', $laterData['profissional_identidade_orgao_id'])->get(['name']);
-                    $dados .= $x . "Identidade Profissional (Órgão): " . $y . $search[0]['name'] . "<br>";
-                }
-
-                if ($beforeData['profissional_identidade_estado_id'] != $laterData['profissional_identidade_estado_id']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                if (($laterData['profissional_identidade_estado_id'] != "") and ($laterData['profissional_identidade_estado_id'] != 0)) {
-                    $search = Estado::where('id', $laterData['profissional_identidade_estado_id'])->get(['name']);
-                    $dados .= $x . "Identidade Profissional (Estado): " . $y . $search[0]['name'] . "<br>";
-                }
-
-                if ($beforeData['profissional_identidade_numero'] != $laterData['profissional_identidade_numero']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                $dados .= $x . "Identidade Profissional (Número): " . $y . $laterData['profissional_identidade_numero'] . "<br>";
-
-                if ($beforeData['profissional_identidade_data_emissao'] != $laterData['profissional_identidade_data_emissao']) {
-                    $x = "<font class='text-danger'>";
-                    $y = "</font>";
-                } else {
-                    $x = "";
-                    $y = "";
-                }
-                $dados .= $x . "Identidade Profissional (Emissão): " . $y . $laterData['profissional_identidade_data_emissao'] . "<br>";
+                $dados .= $x . "Telefone Mãe: " . $y . $laterData['telefone_mae'] . "<br>";
 
                 if ($beforeData['cpf'] != $laterData['cpf']) {
                     $x = "<font class='text-danger'>";
@@ -1590,32 +1460,113 @@ class Transacoes
                 }
                 $dados .= $x . "CPF: " . $y . $laterData['cpf'] . "<br>";
 
-                if ($beforeData['pis'] != $laterData['pis']) {
+                if ($beforeData['responsavel_legal_nome'] != $laterData['responsavel_legal_nome']) {
                     $x = "<font class='text-danger'>";
                     $y = "</font>";
                 } else {
                     $x = "";
                     $y = "";
                 }
-                $dados .= $x . "PIS: " . $y . $laterData['pis'] . "<br>";
+                $dados .= $x . "Responsável Legal Nome: " . $y . $laterData['responsavel_legal_nome'] . "<br>";
 
-                if ($beforeData['pasep'] != $laterData['pasep']) {
+                if ($beforeData['responsavel_legal_parentesco'] != $laterData['responsavel_legal_parentesco']) {
                     $x = "<font class='text-danger'>";
                     $y = "</font>";
                 } else {
                     $x = "";
                     $y = "";
                 }
-                $dados .= $x . "PASEP: " . $y . $laterData['pasep'] . "<br>";
+                $dados .= $x . "Responsável Legal Parentesco: " . $y . $laterData['responsavel_legal_parentesco'] . "<br>";
 
-                if ($beforeData['carteira_trabalho'] != $laterData['carteira_trabalho']) {
+                if ($beforeData['responsavel_legal_telefone'] != $laterData['responsavel_legal_telefone']) {
                     $x = "<font class='text-danger'>";
                     $y = "</font>";
                 } else {
                     $x = "";
                     $y = "";
                 }
-                $dados .= $x . "Carteira Trabalho: " . $y . $laterData['carteira_trabalho'] . "<br>";
+                $dados .= $x . "Responsável Legal Telefone: " . $y . $laterData['responsavel_legal_telefone'] . "<br>";
+
+                if ($beforeData['responsavel_legal_celular'] != $laterData['responsavel_legal_celular']) {
+                    $x = "<font class='text-danger'>";
+                    $y = "</font>";
+                } else {
+                    $x = "";
+                    $y = "";
+                }
+                $dados .= $x . "Responsável Legal Celular: " . $y . $laterData['responsavel_legal_celular'] . "<br>";
+
+                if ($beforeData['problema_saude'] != $laterData['problema_saude']) {
+                    $x = "<font class='text-danger'>";
+                    $y = "</font>";
+                } else {
+                    $x = "";
+                    $y = "";
+                }
+                $dados .= $x . "Problema Saúde: " . $y . $laterData['problema_saude'] . "<br>";
+
+                if ($beforeData['problema_saude_descricao'] != $laterData['problema_saude_descricao']) {
+                    $x = "<font class='text-danger'>";
+                    $y = "</font>";
+                } else {
+                    $x = "";
+                    $y = "";
+                }
+                $dados .= $x . "Problema Saúde Descrição: " . $y . $laterData['problema_saude_descricao'] . "<br>";
+
+                if ($beforeData['acompanhamento_saude'] != $laterData['acompanhamento_saude']) {
+                    $x = "<font class='text-danger'>";
+                    $y = "</font>";
+                } else {
+                    $x = "";
+                    $y = "";
+                }
+                $dados .= $x . "Acompanhamento Saúde: " . $y . $laterData['acompanhamento_saude'] . "<br>";
+
+                if ($beforeData['acompanhamento_saude_descricao'] != $laterData['acompanhamento_saude_descricao']) {
+                    $x = "<font class='text-danger'>";
+                    $y = "</font>";
+                } else {
+                    $x = "";
+                    $y = "";
+                }
+                $dados .= $x . "Acompanhamento Saúde Descrção: " . $y . $laterData['acompanhamento_saude_descricao'] . "<br>";
+
+                if ($beforeData['medicamento_controlado'] != $laterData['medicamento_controlado']) {
+                    $x = "<font class='text-danger'>";
+                    $y = "</font>";
+                } else {
+                    $x = "";
+                    $y = "";
+                }
+                $dados .= $x . "Medicamento Controlado: " . $y . $laterData['medicamento_controlado'] . "<br>";
+
+                if ($beforeData['medicamento_controlado_descricao'] != $laterData['medicamento_controlado_descricao']) {
+                    $x = "<font class='text-danger'>";
+                    $y = "</font>";
+                } else {
+                    $x = "";
+                    $y = "";
+                }
+                $dados .= $x . "Medicamento Controlado Descrição: " . $y . $laterData['medicamento_controlado_descricao'] . "<br>";
+
+                if ($beforeData['laudo_nee_ou_transtorno'] != $laterData['laudo_nee_ou_transtorno']) {
+                    $x = "<font class='text-danger'>";
+                    $y = "</font>";
+                } else {
+                    $x = "";
+                    $y = "";
+                }
+                $dados .= $x . "Laudo NEE ou Transtorno: " . $y . $laterData['laudo_nee_ou_transtorno'] . "<br>";
+
+                if ($beforeData['laudo_nee_ou_transtorno_descricao'] != $laterData['laudo_nee_ou_transtorno_descricao']) {
+                    $x = "<font class='text-danger'>";
+                    $y = "</font>";
+                } else {
+                    $x = "";
+                    $y = "";
+                }
+                $dados .= $x . "Laudo NEE ou Transtorno Descrição: " . $y . $laterData['laudo_nee_ou_transtorno_descricao'] . "<br>";
 
                 if ($beforeData['cep'] != $laterData['cep']) {
                     $x = "<font class='text-danger'>";
@@ -1679,6 +1630,15 @@ class Transacoes
                     $y = "";
                 }
                 $dados .= $x . "UF: " . $y . $laterData['uf'] . "<br>";
+
+                if ($beforeData['foto'] != $laterData['foto']) {
+                    $x = "<font class='text-danger'>";
+                    $y = "</font>";
+                } else {
+                    $x = "";
+                    $y = "";
+                }
+                $dados .= $x . "Foto: " . $y . $laterData['foto'] . "<br>";
             }
 
             //tipos escolas
@@ -1759,7 +1719,7 @@ class Transacoes
                 $dados .= $x . "Sala: " . $y . $laterData['sala'] . "<br>";
             }
 
-            //deficiencias
+            //nees
             if ($submodulo_id == 28) {
                 if ($beforeData['name'] != $laterData['name']) {
                     $x = "<font class='text-danger'>";

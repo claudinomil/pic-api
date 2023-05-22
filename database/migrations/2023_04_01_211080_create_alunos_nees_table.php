@@ -4,19 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDeficienciasTable extends Migration
+class CreateAlunosNeesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
-        Schema::create('deficiencias', function (Blueprint $table) {
+        Schema::create('alunos_nees', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('descricao')->nullable();
+            $table->foreignId('aluno_id')->constrained('alunos');
+            $table->foreignId('nee_id')->constrained('nees');
             $table->timestamps();
         });
     }
@@ -28,6 +23,6 @@ class CreateDeficienciasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('deficiencias');
+        Schema::dropIfExists('nees');
     }
 }

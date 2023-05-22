@@ -16,4 +16,7 @@ Route::prefix('alunos')->group(function () {
     Route::put('/updatefoto/{id}', [AlunoController::class, 'updateFoto'])->middleware(['auth:api', 'scope:claudino']);
 
     Route::get('/extradata/{id}', [AlunoController::class, 'extraData'])->middleware(['auth:api', 'scope:claudino']);
+
+    Route::post('/store/documentos', [AlunoController::class, 'store_documentos'])->middleware(['auth:api', 'scope:claudino']);
+    Route::delete('/deletar_documento/destroy/{id}', [AlunoController::class, 'deletar_documento'])->middleware(['auth:api', 'scope:claudino']);
 });

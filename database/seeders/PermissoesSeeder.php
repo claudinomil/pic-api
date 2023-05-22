@@ -166,11 +166,17 @@ class PermissoesSeeder extends Seeder
         Permissao::create(['submodulo_id' => 27, 'name' => 'turmas_edit', 'description' => 'Editar Registro - Turmas']);
         Permissao::create(['submodulo_id' => 27, 'name' => 'turmas_destroy', 'description' => 'Deletar Registro - Turmas']);
 
-        Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_list', 'description' => 'Visualizar Registro - Deficiências']);
-        Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_create', 'description' => 'Criar Registro - Deficiências']);
-        Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_show', 'description' => 'Visualizar Registro - Deficiências']);
-        Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_edit', 'description' => 'Editar Registro - Deficiências']);
-        Permissao::create(['submodulo_id' => 28, 'name' => 'deficiencias_destroy', 'description' => 'Deletar Registro - Deficiências']);
+        Permissao::create(['submodulo_id' => 28, 'name' => 'nees_list', 'description' => 'Visualizar Registro - Necessidades Educacionais Específicas']);
+        Permissao::create(['submodulo_id' => 28, 'name' => 'nees_create', 'description' => 'Criar Registro - Necessidades Educacionais Específicas']);
+        Permissao::create(['submodulo_id' => 28, 'name' => 'nees_show', 'description' => 'Visualizar Registro - Necessidades Educacionais Específicas']);
+        Permissao::create(['submodulo_id' => 28, 'name' => 'nees_edit', 'description' => 'Editar Registro - Necessidades Educacionais Específicas']);
+        Permissao::create(['submodulo_id' => 28, 'name' => 'nees_destroy', 'description' => 'Deletar Registro - Necessidades Educacionais Específicas']);
+
+        Permissao::create(['submodulo_id' => 29, 'name' => 'avaliacoes_list', 'description' => 'Visualizar Registro - Avalie-nos']);
+        Permissao::create(['submodulo_id' => 29, 'name' => 'avaliacoes_create', 'description' => 'Criar Registro - Avalie-nos']);
+        Permissao::create(['submodulo_id' => 29, 'name' => 'avaliacoes_show', 'description' => 'Visualizar Registro - Avalie-nos']);
+        Permissao::create(['submodulo_id' => 29, 'name' => 'avaliacoes_edit', 'description' => 'Editar Registro - Avalie-nos']);
+        Permissao::create(['submodulo_id' => 29, 'name' => 'avaliacoes_destroy', 'description' => 'Deletar Registro - Avalie-nos']);
 
         //Mobile
         Permissao::create(['id' => 1000, 'submodulo_id' => 200, 'name' => 'mobile_list', 'description' => 'Visualizar Registro - Mobile']);
@@ -185,10 +191,10 @@ class PermissoesSeeder extends Seeder
         Permissao::create(['id' => 1008, 'submodulo_id' => 201, 'name' => 'mobile_escolas_edit', 'description' => 'Editar Registro - Mobile Escolas']);
         Permissao::create(['id' => 1009, 'submodulo_id' => 201, 'name' => 'mobile_escolas_destroy', 'description' => 'Deletar Registro - Mobile Escolas']);
 
-        Permissao::create(['id' => 1010, 'submodulo_id' => 202, 'name' => 'mobile_deficiencias_list', 'description' => 'Visualizar Registro - Mobile Deficiências']);
-        Permissao::create(['id' => 1011, 'submodulo_id' => 202, 'name' => 'mobile_deficiencias_create', 'description' => 'Criar Registro - Mobile Deficiências']);
-        Permissao::create(['id' => 1012, 'submodulo_id' => 202, 'name' => 'mobile_deficiencias_show', 'description' => 'Visualizar Registro - Mobile Deficiências']);
-        Permissao::create(['id' => 1013, 'submodulo_id' => 202, 'name' => 'mobile_deficiencias_edit', 'description' => 'Editar Registro - Mobile Deficiências']);
-        Permissao::create(['id' => 1014, 'submodulo_id' => 202, 'name' => 'mobile_deficiencias_destroy', 'description' => 'Deletar Registro - Mobile Deficiências']);
+        Permissao::create(['id' => 1010, 'submodulo_id' => 202, 'name' => 'mobile_nees_list', 'description' => 'Visualizar Registro - Mobile Necessidades Educacionais Específicas']);
+        Permissao::create(['id' => 1011, 'submodulo_id' => 202, 'name' => 'mobile_nees_create', 'description' => 'Criar Registro - Mobile Necessidades Educacionais Específicas']);
+        Permissao::create(['id' => 1012, 'submodulo_id' => 202, 'name' => 'mobile_nees_show', 'description' => 'Visualizar Registro - Mobile Necessidades Educacionais Específicas']);
+        Permissao::create(['id' => 1013, 'submodulo_id' => 202, 'name' => 'mobile_nees_edit', 'description' => 'Editar Registro - Mobile Necessidades Educacionais Específicas']);
+        Permissao::create(['id' => 1014, 'submodulo_id' => 202, 'name' => 'mobile_nees_destroy', 'description' => 'Deletar Registro - Mobile Necessidades Educacionais Específicas']);
     }
 }

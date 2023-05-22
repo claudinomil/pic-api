@@ -6,6 +6,7 @@ use App\API\ApiReturn;
 use App\Http\Requests\NivelEnsinoStoreRequest;
 use App\Http\Requests\NivelEnsinoUpdateRequest;
 use App\Models\NivelEnsino;
+use Illuminate\Support\Facades\DB;
 
 class NivelEnsinoController extends Controller
 {
@@ -89,6 +90,19 @@ class NivelEnsinoController extends Controller
                 return response()->json(ApiReturn::data('Registro não encontrado.', 4040, null, $registro), 404);
             } else {
                 //Verificar Relacionamentos'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                //Tabela Turmas
+                $qtd = DB::table('turmas')->where('nivel_ensino_id', $id)->count();
+
+                if ($qtd > 0) {
+                    return response()->json(ApiReturn::data('Náo é possível excluir. Registro relacionado em Turmas.', 2040, null, null), 200);
+                }
+
+                //Tabela Escolas
+                $qtd = DB::table('escolas_niveis_ensinos')->where('nivel_ensino_id', $id)->count();
+
+                if ($qtd > 0) {
+                    return response()->json(ApiReturn::data('Náo é possível excluir. Registro relacionado em Escolas.', 2040, null, null), 200);
+                }
                 //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
                 //Deletar'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''

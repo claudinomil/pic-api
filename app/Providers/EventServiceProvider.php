@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Deficiencia;
+use App\Models\Nee;
 use App\Models\Departamento;
 use App\Models\Funcionario;
 use App\Models\Genero;
@@ -27,7 +27,7 @@ use App\Models\Escola;
 use App\Models\Professor;
 use App\Models\Aluno;
 
-use App\Observers\DeficienciaObserver;
+use App\Observers\NeeObserver;
 use App\Observers\DepartamentoObserver;
 use App\Observers\FuncionarioObserver;
 use App\Observers\GeneroObserver;
@@ -89,7 +89,7 @@ class EventServiceProvider extends ServiceProvider
         Professor::observe(ProfessorObserver::class);
         Aluno::observe(AlunoObserver::class);
         Turma::observe(TurmaObserver::class);
-        Deficiencia::observe(DeficienciaObserver::class);
+        Nee::observe(NeeObserver::class);
     }
 
     public function shouldDiscoverEvents()

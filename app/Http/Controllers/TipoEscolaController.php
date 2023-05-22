@@ -6,6 +6,7 @@ use App\API\ApiReturn;
 use App\Http\Requests\TipoEscolaStoreRequest;
 use App\Http\Requests\TipoEscolaUpdateRequest;
 use App\Models\TipoEscola;
+use Illuminate\Support\Facades\DB;
 
 class TipoEscolaController extends Controller
 {
@@ -89,6 +90,12 @@ class TipoEscolaController extends Controller
                 return response()->json(ApiReturn::data('Registro não encontrado.', 4040, null, $registro), 404);
             } else {
                 //Verificar Relacionamentos'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                //Tabela Escolas
+                $qtd = DB::table('escolas')->where('tipo_escola_id', $id)->count();
+
+                if ($qtd > 0) {
+                    return response()->json(ApiReturn::data('Náo é possível excluir. Registro relacionado em Escolas.', 2040, null, null), 200);
+                }
                 //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
                 //Deletar'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
