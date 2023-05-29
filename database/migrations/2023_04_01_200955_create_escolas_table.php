@@ -19,6 +19,8 @@ class CreateEscolasTable extends Migration
             $table->foreignId('tipo_escola_id')->constrained('tipos_escolas');
             $table->string('telefone_1')->nullable();
             $table->string('telefone_2')->nullable();
+            $table->string('celular_1')->nullable();
+            $table->string('celular_2')->nullable();
             $table->string('cep')->nullable();
             $table->string('numero')->nullable();
             $table->string('complemento')->nullable();

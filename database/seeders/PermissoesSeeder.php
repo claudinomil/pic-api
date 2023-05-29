@@ -178,6 +178,12 @@ class PermissoesSeeder extends Seeder
         Permissao::create(['submodulo_id' => 29, 'name' => 'avaliacoes_edit', 'description' => 'Editar Registro - Avalie-nos']);
         Permissao::create(['submodulo_id' => 29, 'name' => 'avaliacoes_destroy', 'description' => 'Deletar Registro - Avalie-nos']);
 
+        Permissao::create(['submodulo_id' => 30, 'name' => 'calendarios_inclusivos_list', 'description' => 'Visualizar Registro - Calendário Inclusivo']);
+        Permissao::create(['submodulo_id' => 30, 'name' => 'calendarios_inclusivos_create', 'description' => 'Criar Registro - Calendário Inclusivo']);
+        Permissao::create(['submodulo_id' => 30, 'name' => 'calendarios_inclusivos_show', 'description' => 'Visualizar Registro - Calendário Inclusivo']);
+        Permissao::create(['submodulo_id' => 30, 'name' => 'calendarios_inclusivos_edit', 'description' => 'Editar Registro - Calendário Inclusivo']);
+        Permissao::create(['submodulo_id' => 30, 'name' => 'calendarios_inclusivos_destroy', 'description' => 'Deletar Registro - Calendário Inclusivo']);
+
         //Mobile
         Permissao::create(['id' => 1000, 'submodulo_id' => 200, 'name' => 'mobile_list', 'description' => 'Visualizar Registro - Mobile']);
         Permissao::create(['id' => 1001, 'submodulo_id' => 200, 'name' => 'mobile_create', 'description' => 'Criar Registro - Mobile']);

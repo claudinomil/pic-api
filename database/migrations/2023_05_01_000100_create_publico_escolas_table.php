@@ -14,6 +14,7 @@ class CreatePublicoEscolasTable extends Migration
             $table->string('diretor')->nullable();
             $table->string('endereco')->nullable();
             $table->string('telefone')->nullable();
+            $table->string('celular')->nullable();
             $table->string('email')->nullable();
             $table->text('motivo')->nullable();
             $table->timestamps();

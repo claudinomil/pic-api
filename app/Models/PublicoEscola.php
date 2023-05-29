@@ -16,6 +16,7 @@ class PublicoEscola extends Model
         'diretor',
         'endereco',
         'telefone',
+        'celular',
         'email',
         'motivo'
     ];

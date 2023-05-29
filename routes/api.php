@@ -89,5 +89,8 @@ require __DIR__.'/routes_nees.php';
 //Avaliacoes
 require __DIR__.'/routes_avaliacoes.php';
 
+//Calendarios Inclusivos
+require __DIR__.'/routes_calendarios_inclusivos.php';
+
 //Publico Escolas
 require __DIR__.'/routes_publico_escolas.php';

@@ -17,6 +17,8 @@ class Escola extends Model
         'tipo_escola_id',
         'telefone_1',
         'telefone_2',
+        'celular_1',
+        'celular_2',
         'cep',
         'numero',
         'complemento',
