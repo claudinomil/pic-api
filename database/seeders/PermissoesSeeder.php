@@ -184,6 +184,15 @@ class PermissoesSeeder extends Seeder
         Permissao::create(['submodulo_id' => 30, 'name' => 'calendarios_inclusivos_edit', 'description' => 'Editar Registro - Calendário Inclusivo']);
         Permissao::create(['submodulo_id' => 30, 'name' => 'calendarios_inclusivos_destroy', 'description' => 'Deletar Registro - Calendário Inclusivo']);
 
+        Permissao::create(['submodulo_id' => 31, 'name' => 'espacos_colaboracoes_list', 'description' => 'Visualizar Registro - Espaços Colaborações']);
+        Permissao::create(['submodulo_id' => 31, 'name' => 'espacos_colaboracoes_create', 'description' => 'Criar Registro - Espaços Colaborações']);
+        Permissao::create(['submodulo_id' => 31, 'name' => 'espacos_colaboracoes_show', 'description' => 'Visualizar Registro - Espaços Colaborações']);
+        Permissao::create(['submodulo_id' => 31, 'name' => 'espacos_colaboracoes_edit', 'description' => 'Editar Registro - Espaços Colaborações']);
+        Permissao::create(['submodulo_id' => 31, 'name' => 'espacos_colaboracoes_destroy', 'description' => 'Deletar Registro - Espaços Colaborações']);
+
+        Permissao::create(['submodulo_id' => 32, 'name' => 'sobre_produto_list', 'description' => 'Visualizar Registro - Sobre o Produto Educacional']);
+        Permissao::create(['submodulo_id' => 32, 'name' => 'sobre_produto_edit', 'description' => 'Editar Registro - Sobre o Produto Educacional']);
+
         //Mobile
         Permissao::create(['id' => 1000, 'submodulo_id' => 200, 'name' => 'mobile_list', 'description' => 'Visualizar Registro - Mobile']);
         Permissao::create(['id' => 1001, 'submodulo_id' => 200, 'name' => 'mobile_create', 'description' => 'Criar Registro - Mobile']);

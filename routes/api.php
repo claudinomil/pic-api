@@ -92,5 +92,11 @@ require __DIR__.'/routes_avaliacoes.php';
 //Calendarios Inclusivos
 require __DIR__.'/routes_calendarios_inclusivos.php';
 
+//Espaços Colaborações
+require __DIR__.'/routes_espacos_colaboracoes.php';
+
+//Sobre Produto
+require __DIR__.'/routes_sobre_produto.php';
+
 //Publico Escolas
 require __DIR__.'/routes_publico_escolas.php';

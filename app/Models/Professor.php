@@ -27,10 +27,6 @@ class Professor extends Model
         'telefone_2',
         'celular_1',
         'celular_2',
-        'pessoal_identidade_estado_id',
-        'pessoal_identidade_orgao_id',
-        'pessoal_identidade_numero',
-        'pessoal_identidade_data_emissao',
         'profissional_identidade_estado_id',
         'profissional_identidade_orgao_id',
         'profissional_identidade_numero',
@@ -39,13 +35,6 @@ class Professor extends Model
         'pis',
         'pasep',
         'carteira_trabalho',
-        'cep',
-        'numero',
-        'complemento',
-        'logradouro',
-        'bairro',
-        'localidade',
-        'uf',
         'funcao_id',
         'data_admissao',
         'data_demissao',
@@ -56,7 +45,6 @@ class Professor extends Model
         'data_nascimento',
         'data_admissao',
         'data_demissao',
-        'pessoal_identidade_data_emissao',
         'profissional_identidade_data_emissao'
     ];
 }

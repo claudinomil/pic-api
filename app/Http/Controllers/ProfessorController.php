@@ -32,11 +32,9 @@ class ProfessorController extends Controller
     public function index()
     {
         $registros = DB::table('professores')
-            ->leftJoin('identidade_orgaos', 'professores.pessoal_identidade_orgao_id', '=', 'identidade_orgaos.id')
-            ->leftJoin('estados', 'professores.pessoal_identidade_estado_id', '=', 'estados.id')
             ->leftJoin('generos', 'professores.genero_id', '=', 'generos.id')
             ->leftJoin('estados_civis', 'professores.estado_civil_id', '=', 'estados_civis.id')
-            ->select(['professores.*', 'identidade_orgaos.name as identidade_orgaosName', 'estados.name as identidadeEstadoName', 'generos.name as generoName', 'estados_civis.name as estado_civilName'])
+            ->select(['professores.*', 'generos.name as generoName', 'estados_civis.name as estado_civilName'])
             ->get();
 
         return response()->json(ApiReturn::data('Lista de dados enviada com sucesso.', 2000, null, $registros), 200);
@@ -109,7 +107,6 @@ class ProfessorController extends Controller
             if ($request['data_nascimento'] != '') {$data['data_nascimento'] = Carbon::createFromFormat('d/m/Y', $request['data_nascimento'])->format('Y-m-d');}
             if ($request['data_admissao'] != '') {$data['data_admissao'] = Carbon::createFromFormat('d/m/Y', $request['data_admissao'])->format('Y-m-d');}
             if ($request['data_demissao'] != '') {$data['data_demissao'] = Carbon::createFromFormat('d/m/Y', $request['data_demissao'])->format('Y-m-d');}
-            if ($request['pessoal_identidade_data_emissao'] != '') {$data['pessoal_identidade_data_emissao'] = Carbon::createFromFormat('d/m/Y', $request['pessoal_identidade_data_emissao'])->format('Y-m-d');}
             if ($request['profissional_identidade_data_emissao'] != '') {$data['profissional_identidade_data_emissao'] = Carbon::createFromFormat('d/m/Y', $request['profissional_identidade_data_emissao'])->format('Y-m-d');}
 
             //Campo foto
@@ -142,7 +139,6 @@ class ProfessorController extends Controller
                 if ($request['data_nascimento'] != '') {$data['data_nascimento'] = Carbon::createFromFormat('d/m/Y', $request['data_nascimento'])->format('Y-m-d');}
                 if ($request['data_admissao'] != '') {$data['data_admissao'] = Carbon::createFromFormat('d/m/Y', $request['data_admissao'])->format('Y-m-d');}
                 if ($request['data_demissao'] != '') {$data['data_demissao'] = Carbon::createFromFormat('d/m/Y', $request['data_demissao'])->format('Y-m-d');}
-                if ($request['pessoal_identidade_data_emissao'] != '') {$data['pessoal_identidade_data_emissao'] = Carbon::createFromFormat('d/m/Y', $request['pessoal_identidade_data_emissao'])->format('Y-m-d');}
                 if ($request['profissional_identidade_data_emissao'] != '') {$data['profissional_identidade_data_emissao'] = Carbon::createFromFormat('d/m/Y', $request['profissional_identidade_data_emissao'])->format('Y-m-d');}
 
                 //Alterando registro
@@ -166,13 +162,11 @@ class ProfessorController extends Controller
 
             //Professor
             $professor = DB::table('professores')
-                ->leftJoin('identidade_orgaos', 'professores.pessoal_identidade_orgao_id', '=', 'identidade_orgaos.id')
-                ->leftJoin('estados', 'professores.pessoal_identidade_estado_id', '=', 'estados.id')
                 ->leftJoin('generos', 'professores.genero_id', '=', 'generos.id')
                 ->leftJoin('funcoes', 'professores.funcao_id', '=', 'funcoes.id')
                 ->leftJoin('escolaridades', 'professores.escolaridade_id', '=', 'escolaridades.id')
                 ->leftJoin('estados_civis', 'professores.estado_civil_id', '=', 'estados_civis.id')
-                ->select(['professores.*', 'identidade_orgaos.name as identidade_orgaosName', 'estados.name as identidadeEstadoName', 'generos.name as generoName', 'escolaridades.name as escolaridadeName', 'funcoes.name as funcaoName', 'estados_civis.name as estado_civilName'])
+                ->select(['professores.*', 'generos.name as generoName', 'escolaridades.name as escolaridadeName', 'funcoes.name as funcaoName', 'estados_civis.name as estado_civilName'])
                 ->where('professores.id', '=', $id)
                 ->get();
 
@@ -250,11 +244,9 @@ class ProfessorController extends Controller
     public function search($field, $value)
     {
         $registros = DB::table('professores')
-            ->leftJoin('identidade_orgaos', 'professores.pessoal_identidade_orgao_id', '=', 'identidade_orgaos.id')
-            ->leftJoin('estados', 'professores.pessoal_identidade_estado_id', '=', 'estados.id')
             ->leftJoin('generos', 'professores.genero_id', '=', 'generos.id')
             ->leftJoin('estados_civis', 'professores.estado_civil_id', '=', 'estados_civis.id')
-            ->select(['professores.*', 'identidade_orgaos.name as identidade_orgaosName', 'estados.name as identidadeEstadoName', 'generos.name as generoName', 'estados_civis.name as estado_civilName'])
+            ->select(['professores.*', 'generos.name as generoName', 'estados_civis.name as estado_civilName'])
             ->where($field, 'like', '%' . $value . '%')
             ->get();
 
@@ -264,11 +256,9 @@ class ProfessorController extends Controller
     public function research($fieldSearch, $fieldValue, $fieldReturn)
     {
         $registros = DB::table('professores')
-            ->leftJoin('identidade_orgaos', 'professores.pessoal_identidade_orgao_id', '=', 'identidade_orgaos.id')
-            ->leftJoin('estados', 'professores.pessoal_identidade_estado_id', '=', 'estados.id')
             ->leftJoin('generos', 'professores.genero_id', '=', 'generos.id')
             ->leftJoin('estados_civis', 'professores.estado_civil_id', '=', 'estados_civis.id')
-            ->select(['professores.*', 'identidade_orgaos.name as identidade_orgaosName', 'estados.name as identidadeEstadoName', 'generos.name as generoName', 'estados_civis.name as estado_civilName'])
+            ->select(['professores.*', 'generos.name as generoName', 'estados_civis.name as estado_civilName'])
             ->where($fieldSearch, 'like', '%' . $fieldValue . '%')
             ->get($fieldReturn);
 

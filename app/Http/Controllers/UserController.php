@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\API\ApiReturn;
 use App\Http\Requests\UserStoreRequest;
 use App\Http\Requests\UserUpdateRequest;
+use App\Models\Aluno;
 use App\Models\Funcionario;
 use App\Models\Grupo;
 use App\Models\Modulo;
 use App\Models\Notificacao;
+use App\Models\Professor;
 use App\Models\SistemaAcesso;
 use App\Models\Situacao;
 use App\Models\Submodulo;
@@ -71,6 +73,9 @@ class UserController extends Controller
 
             //Funcionários
             $registros['funcionarios'] = Funcionario::all();
+
+            //Professores
+            $registros['professores'] = Professor::all();
 
             //Sistema Acessos
             $registros['sistema_acessos'] = SistemaAcesso::all();
@@ -344,6 +349,16 @@ class UserController extends Controller
                     ->join('permissoes', 'grupos_permissoes.permissao_id', '=', 'permissoes.id')
                     ->select('permissoes.name as permissao')
                     ->where('grupos_permissoes.grupo_id', Auth::user()->grupo_id)
+                    ->get();
+
+                //Outras permissões para o usuário logado
+                $registros['userPermissao_apenas_alunos_professor_logado'] = Grupo::select('apenas_alunos_professor_logado')->where('id', '=', Auth::user()->grupo_id)->get();
+
+                //Alunos do Usuário referência a um Professor (Se não for Professor retorna vazio)
+                $registros['userLoggedProfessor_alunos'] = Aluno::leftJoin('turmas', 'alunos.turma_id', '=', 'turmas.id')
+                    ->select('alunos.*')
+                    ->where('turmas.professor_id', '=', Auth::user()->professor_id)
+                    ->orderby('alunos.name')
                     ->get();
 
                 //Menu Módulos

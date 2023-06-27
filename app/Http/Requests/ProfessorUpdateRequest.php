@@ -46,10 +46,6 @@ class ProfessorUpdateRequest extends FormRequest
             'funcao_id' => ['nullable', 'integer', 'numeric'],
             'data_admissao' => ['required', 'date_format:d/m/Y'],
             'data_demissao' => ['nullable', 'date_format:d/m/Y'],
-            'pessoal_identidade_orgao_id' => ['nullable', 'integer', 'numeric'],
-            'pessoal_identidade_estado_id' => ['nullable', 'integer', 'numeric'],
-            'pessoal_identidade_numero' => ['nullable', 'numeric'],
-            'pessoal_identidade_data_emissao' => ['nullable', 'date_format:d/m/Y'],
             'profissional_identidade_orgao_id' => ['nullable', 'integer', 'numeric'],
             'profissional_identidade_estado_id' => ['nullable', 'integer', 'numeric'],
             'profissional_identidade_numero' => ['nullable', 'numeric'],
@@ -73,10 +69,7 @@ class ProfessorUpdateRequest extends FormRequest
                 'nullable',
                 Rule::unique('professores')->ignore($this->id),
                 'numeric'
-            ],
-            'cep' => ['nullable', 'digits:8'],
-            'numero' => ['nullable', 'numeric'],
-            'complemento' => ['nullable', 'min:1']
+            ]
         ];
     }
 
@@ -109,10 +102,6 @@ class ProfessorUpdateRequest extends FormRequest
             'data_admissao.required' => 'O Data Admissão é requerido.',
             'data_admissao.date_format' => 'O Data Admissão não é uma data válida.',
             'data_demissao.date_format' => 'O Data Demissão não é uma data válida.',
-            'pessoal_identidade_orgao_id.integer' => 'A Identidade Pessoal (Òrgão) deve ser um ítem da lista.',
-            'pessoal_identidade_estado_id.integer' => 'A Identidade Pessoal (Estado) deve ser um ítem da lista.',
-            'pessoal_identidade_numero.numeric' => 'A Identidade Pessoal (Número) deve ser um número válido.',
-            'pessoal_identidade_data_emissao.date_format' => 'A Identidade Pessoal (Emissão) não é uma data válida.',
             'profissional_identidade_orgao_id.integer' => 'A Identidade Profissional (Òrgão) deve ser um ítem da lista.',
             'profissional_identidade_estado_id.integer' => 'A Identidade Profissional (Estado) deve ser um ítem da lista.',
             'profissional_identidade_numero.numeric' => 'A Identidade Profissional (Número) deve ser um número válido.',
@@ -125,10 +114,7 @@ class ProfessorUpdateRequest extends FormRequest
             'pasep.unique' => 'O PASEP já existe.',
             'pasep.nis' => 'O PASEP não é um número válido.',
             'carteira_trabalho.unique' => 'O Carteira de Trabalho já existe.',
-            'carteira_trabalho.numeric' => 'A Carteira de Trabalho não é um número válido.',
-            'cep.digits' => 'O CEP deve ter 8 dígitos.',
-            'numero.numeric' => 'O Número deve ser um número.',
-            'complemento.min' => 'O Complemento deve ter pelo menos 1 caractere.'
+            'carteira_trabalho.numeric' => 'A Carteira de Trabalho não é um número válido.'
         ];
     }
 }

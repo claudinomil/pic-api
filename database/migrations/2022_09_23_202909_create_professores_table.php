@@ -29,10 +29,6 @@ class CreateProfessoresTable extends Migration
             $table->string('telefone_2')->nullable();
             $table->string('celular_1')->nullable();
             $table->string('celular_2')->nullable();
-            $table->foreignId('pessoal_identidade_estado_id')->nullable()->constrained('estados');
-            $table->foreignId('pessoal_identidade_orgao_id')->nullable()->constrained('identidade_orgaos');
-            $table->string('pessoal_identidade_numero')->nullable();
-            $table->date('pessoal_identidade_data_emissao')->nullable();
             $table->foreignId('profissional_identidade_estado_id')->nullable()->constrained('estados');
             $table->foreignId('profissional_identidade_orgao_id')->nullable()->constrained('identidade_orgaos');
             $table->string('profissional_identidade_numero')->nullable();
@@ -41,13 +37,6 @@ class CreateProfessoresTable extends Migration
             $table->string('pis', 11)->nullable()->unique();
             $table->string('pasep', 11)->nullable()->unique();
             $table->string('carteira_trabalho', 11)->nullable()->unique();
-            $table->string('cep')->nullable();
-            $table->string('numero')->nullable();
-            $table->string('complemento')->nullable();
-            $table->string('logradouro')->nullable();
-            $table->string('bairro')->nullable();
-            $table->string('localidade')->nullable();
-            $table->string('uf')->nullable();
             $table->foreignId('funcao_id')->nullable()->constrained('funcoes');
             $table->date('data_admissao');
             $table->date('data_demissao')->nullable();

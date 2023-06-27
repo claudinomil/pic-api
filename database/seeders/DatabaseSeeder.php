@@ -35,7 +35,8 @@ class DatabaseSeeder extends Seeder
             TurmasSeeder::class,
             AlunosSeeder::class,
             TransacoesSeeder::class,
-            NeesSeeder::class
+            NeesSeeder::class,
+            SobreProdutoSeeder::class
         ]);
     }
 }

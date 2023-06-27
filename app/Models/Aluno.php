@@ -78,6 +78,10 @@ class Aluno extends Model
 
     protected function setFotoAttribute($value)
     {
-        if ($value == '') {$this->attributes['foto'] = 'build/assets/images/alunos/aluno-0.png';}
+        if ($value == '') {
+            $this->attributes['foto'] = 'build/assets/images/alunos/aluno-0.png';
+        } else {
+            $this->attributes['foto'] = $value;
+        }
     }
 }

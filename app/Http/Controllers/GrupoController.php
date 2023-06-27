@@ -104,6 +104,7 @@ class GrupoController extends Controller
 
             $registro['id'] = $dados[0]->id; //Guarda id do Grupo
             $registro['name'] = $dados[0]->name; //Guarda name do Grupo
+            $registro['apenas_alunos_professor_logado'] = $dados[0]->apenas_alunos_professor_logado; //Guarda apenas_alunos_professor_logado do Grupo
 
             foreach ($dados as $key => $dado) {
                 $registro[$dado->permissaoName] = true; //Guarda nome das Permissoes do Grupo
@@ -144,6 +145,14 @@ class GrupoController extends Controller
     public function store(GrupoStoreRequest $request)
     {
         try {
+            //verificar campos no request'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+            if (isset($request['apenas_alunos_professor_logado'])) {
+                $request['apenas_alunos_professor_logado'] = 1;
+            } else {
+                $request['apenas_alunos_professor_logado'] = 0;
+            }
+            //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
             //Incluindo registro na tabela grupos
             $grupo = $this->grupo->create($request->all());
             $grupo_id = $grupo['id'];
@@ -209,6 +218,14 @@ class GrupoController extends Controller
             if (!$registro) {
                 return response()->json(ApiReturn::data('Registro não encontrado.', 4040, '', $registro), 404);
             } else {
+                //verificar campos no request'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+                if (isset($request['apenas_alunos_professor_logado'])) {
+                    $request['apenas_alunos_professor_logado'] = 1;
+                } else {
+                    $request['apenas_alunos_professor_logado'] = 0;
+                }
+                //''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
                 //Alterando registro na tabela grupos
                 $registro->update($request->all());
 

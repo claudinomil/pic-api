@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\CalendarioInclusivo;
+use App\Models\EspacoColaboracao;
 use App\Models\Nee;
 use App\Models\Departamento;
 use App\Models\Funcionario;
@@ -17,6 +19,7 @@ use App\Models\Operacao;
 use App\Models\Funcao;
 use App\Models\Escolaridade;
 use App\Models\Situacao;
+use App\Models\SobreProduto;
 use App\Models\Submodulo;
 use App\Models\Ferramenta;
 use App\Models\Turma;
@@ -27,6 +30,8 @@ use App\Models\Escola;
 use App\Models\Professor;
 use App\Models\Aluno;
 
+use App\Observers\CalendarioInclusivoObserver;
+use App\Observers\EspacoColaboracaoObserver;
 use App\Observers\NeeObserver;
 use App\Observers\DepartamentoObserver;
 use App\Observers\FuncionarioObserver;
@@ -42,6 +47,7 @@ use App\Observers\OperacaoObserver;
 use App\Observers\FuncaoObserver;
 use App\Observers\EscolaridadeObserver;
 use App\Observers\SituacaoObserver;
+use App\Observers\SobreProdutoObserver;
 use App\Observers\SubmoduloObserver;
 use App\Observers\FerramentaObserver;
 use App\Observers\TurmaObserver;
@@ -90,6 +96,9 @@ class EventServiceProvider extends ServiceProvider
         Aluno::observe(AlunoObserver::class);
         Turma::observe(TurmaObserver::class);
         Nee::observe(NeeObserver::class);
+        CalendarioInclusivo::observe(CalendarioInclusivoObserver::class);
+        EspacoColaboracao::observe(EspacoColaboracaoObserver::class);
+        SobreProduto::observe(SobreProdutoObserver::class);
     }
 
     public function shouldDiscoverEvents()

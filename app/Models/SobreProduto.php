@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Grupo extends Model
+class SobreProduto extends Model
 {
     use HasFactory;
 
-    protected $table = 'grupos';
+    protected $table = 'sobre_produto';
 
     protected $fillable = [
-        'name',
-        'apenas_alunos_professor_logado'
+        'descricao'
     ];
 }
