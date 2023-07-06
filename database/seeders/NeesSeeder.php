@@ -28,18 +28,5 @@ class NeesSeeder extends Seeder
             'name' => 'NEE Intelectual',
             'created_at' => now()
         ]);
-
-
-//        $faker = \Faker\Factory::create('pt_BR');
-//
-//        for($i=1; $i<=20; $i++) {
-//            Nee::create([
-//                'name' => $faker->slug,
-//                'created_at' => now()
-//            ]);
-//        }
-
-
-
     }
 }

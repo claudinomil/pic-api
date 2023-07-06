@@ -33,12 +33,12 @@ class CreateProfessoresTable extends Migration
             $table->foreignId('profissional_identidade_orgao_id')->nullable()->constrained('identidade_orgaos');
             $table->string('profissional_identidade_numero')->nullable();
             $table->date('profissional_identidade_data_emissao')->nullable();
-            $table->string('cpf', 11)->unique();
+            $table->string('cpf', 11)->nullable()->unique();
             $table->string('pis', 11)->nullable()->unique();
             $table->string('pasep', 11)->nullable()->unique();
             $table->string('carteira_trabalho', 11)->nullable()->unique();
             $table->foreignId('funcao_id')->nullable()->constrained('funcoes');
-            $table->date('data_admissao');
+            $table->date('data_admissao')->nullable();
             $table->date('data_demissao')->nullable();
             $table->text('foto')->nullable();
             $table->timestamps();

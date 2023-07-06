@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -100,12 +101,16 @@ class UserController extends Controller
             $data['avatar'] = 'build/assets/images/users/avatar-0.png';
 
             //grava uma senha provisoria (usuário tem que redefinir)
-            $data['password'] = Hash::make('claudino1971');
+            $password = Str::password(10);
+            $data['password'] = Hash::make($password);
 
             //Incluindo registro
             $this->user->create($data);
 
-            return response()->json(ApiReturn::data('Registro criado com sucesso.', 2010, null, null), 201);
+            //Enviar $password (Diafarçada) para Client enviar E-mail do Primeiro Acesso
+            $password = 'a2@-'.$password.'-_3l';
+
+            return response()->json(ApiReturn::data('Registro criado com sucesso.', 2010, null, $password), 201);
         } catch (\Exception $e) {
             if (config('app.debug')) {
                 return response()->json(ApiReturn::data($e->getMessage(), 5000, null, null), 500);
