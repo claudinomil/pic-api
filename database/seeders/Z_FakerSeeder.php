@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Aluno;
+use App\Models\Chat;
 use App\Models\Escola;
 use App\Models\Genero;
 use App\Models\Grupo;
@@ -18,7 +19,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
-class ZFakerSeeder extends Seeder
+class Z_FakerSeeder extends Seeder
 {
     public function run()
     {
@@ -52,7 +53,49 @@ class ZFakerSeeder extends Seeder
             ]);
         }
 
-        //Professores
+        //Professor Claudino
+        Professor::create([
+            'id' => 1,
+            'name' => 'Claudino Mil Homens de Moraes',
+            'data_nascimento' => '1971-06-02',
+            'genero_id' => 1,
+            'estado_civil_id' => 2,
+            'escolaridade_id' => 10,
+            'nacionalidade_id' => 7,
+            'naturalidade_id' => 19,
+            'email' => 'claudinomoraes@yahoo.com.br',
+            'cpf' => '01798241714',
+            'data_admissao' => '2000-10-10',
+            'foto' => 'build/assets/images/professores/professor-0.png',
+            'created_at' => now()
+        ]);
+
+        //Colocar Professor Claudino no Usuário Claudino
+        $userClaudino = User::find(1);
+        $userClaudino->update(['professor_id' => 1]);
+
+        //Professor Davinni
+        Professor::create([
+            'id' => 2,
+            'name' => 'Davinni',
+            'data_nascimento' => '1990-06-02',
+            'genero_id' => 2,
+            'estado_civil_id' => 2,
+            'escolaridade_id' => 10,
+            'nacionalidade_id' => 7,
+            'naturalidade_id' => 19,
+            'email' => 'davinni@inclusaocolaborativa.com.br',
+            'cpf' => '14684433480',
+            'data_admissao' => '2000-10-10',
+            'foto' => 'build/assets/images/professores/professor-0.png',
+            'created_at' => now()
+        ]);
+
+        //Colocar Professor Davinni no Usuário Davinni
+        $userDavinni = User::find(2);
+        $userDavinni->update(['professor_id' => 2]);
+
+        //Professores Aleatórios
         for($i=1; $i<=20; $i++) {
             Professor::create([
                 'name' => $faker->name,
@@ -170,5 +213,20 @@ class ZFakerSeeder extends Seeder
                 'data_admissao' => $faker->date
             ]);
         }
+
+        //Chat
+//        for($i=1; $i<=120; $i++) {
+//            Chat::create([
+//                'remetente_user_id' => $faker->numberBetween(1, 14),
+//                'destinatario_user_id' => $faker->numberBetween(1, 14),
+//                'mensagem' => $faker->text,
+//                'data_envio' => $faker->date,
+//                'hora_envio' => $faker->time,
+//                'data_recebimento' => $faker->date,
+//                'hora_recebimento' => $faker->time,
+//                'data_leitura' => $faker->date,
+//                'hora_leitura' => $faker->time
+//            ]);
+//        }
     }
 }

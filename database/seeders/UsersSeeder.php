@@ -33,7 +33,7 @@ class UsersSeeder extends Seeder
 
         //Criando Usuario Davinni
         $user2 = \App\Models\User::factory()->create([
-            'name' => 'Davinni Alterar Sobre Nome',
+            'name' => 'Davinni',
             'email' => 'davinni@inclusaocolaborativa.com.br',
             'password' => Hash::make('davinni07'),
             'avatar' => 'build/assets/images/users/avatar-0.png',
