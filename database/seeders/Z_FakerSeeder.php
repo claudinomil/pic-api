@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Aluno;
-use App\Models\Chat;
 use App\Models\Escola;
 use App\Models\Genero;
 use App\Models\Grupo;
@@ -214,19 +213,6 @@ class Z_FakerSeeder extends Seeder
             ]);
         }
 
-        //Chat
-//        for($i=1; $i<=120; $i++) {
-//            Chat::create([
-//                'remetente_user_id' => $faker->numberBetween(1, 14),
-//                'destinatario_user_id' => $faker->numberBetween(1, 14),
-//                'mensagem' => $faker->text,
-//                'data_envio' => $faker->date,
-//                'hora_envio' => $faker->time,
-//                'data_recebimento' => $faker->date,
-//                'hora_recebimento' => $faker->time,
-//                'data_leitura' => $faker->date,
-//                'hora_leitura' => $faker->time
-//            ]);
-//        }
+
     }
 }
