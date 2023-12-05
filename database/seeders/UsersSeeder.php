@@ -36,6 +36,8 @@ class UsersSeeder extends Seeder
             'name' => 'Davinni',
             'email' => 'davinni@inclusaocolaborativa.com.br',
             'password' => Hash::make('davinni07'),
+            'email_verified_at'=>'2023-06-02 12:00:00',
+            'user_confirmed_at' => '2023-06-02 12:00:00',
             'avatar' => 'build/assets/images/users/avatar-0.png',
             'layout_mode' => 'layout_mode_light',
             'layout_style' => 'layout_style_vertical_scrollable',
