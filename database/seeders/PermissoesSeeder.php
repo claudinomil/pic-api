@@ -193,6 +193,8 @@ class PermissoesSeeder extends Seeder
         Permissao::create(['submodulo_id' => 32, 'name' => 'sobre_produto_list', 'description' => 'Visualizar Registro - Sobre o Produto Educacional']);
         Permissao::create(['submodulo_id' => 32, 'name' => 'sobre_produto_edit', 'description' => 'Editar Registro - Sobre o Produto Educacional']);
 
+        Permissao::create(['submodulo_id' => 33, 'name' => 'mensagens_list', 'description' => 'Visualizar Registro - Mensagens']);
+
         //Mobile
         Permissao::create(['id' => 1000, 'submodulo_id' => 200, 'name' => 'mobile_list', 'description' => 'Visualizar Registro - Mobile']);
         Permissao::create(['id' => 1001, 'submodulo_id' => 200, 'name' => 'mobile_create', 'description' => 'Criar Registro - Mobile']);

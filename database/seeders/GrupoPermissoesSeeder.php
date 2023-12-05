@@ -193,6 +193,8 @@ class GrupoPermissoesSeeder extends Seeder
         GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 148]);
         GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 149]);
 
+        GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 150]);
+
         //Mobile
         GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 1000]);
         GrupoPermissao::create(['grupo_id' => 1, 'permissao_id' => 1001]);

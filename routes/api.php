@@ -103,3 +103,6 @@ require __DIR__.'/routes_publico_escolas.php';
 
 //Chat
 require __DIR__.'/routes_chat.php';
+
+//Mensagens
+require __DIR__.'/routes_mensagens.php';
